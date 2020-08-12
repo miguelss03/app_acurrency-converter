@@ -1,4 +1,10 @@
 # app_acurrency-converter
+
+
+# index.js
+
+
+
 import React, {Component} from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Keyboard  } from 'react-native';
 
@@ -119,3 +125,71 @@ const styles = StyleSheet.create({
 });
 
 export default Conversor;
+
+
+
+
+
+
+
+# App.js
+
+import React, {Component} from 'react';
+import { 
+    View, 
+    Text,
+    StyleSheet, 
+} from 'react-native';
+
+
+import Conversor from './src/Conversor';
+
+class App extends Component {
+    render(){
+        return(
+            <View style={styles.container}>
+
+                
+                
+                <Conversor moedaA="EUR" moedaB="BRL" />
+
+                
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+});
+export default App;
+
+
+
+
+
+
+
+
+
+ # api.js
+ 
+ 
+ import axios from 'axios';
+
+////  BaseURL: https://free.currconv.com/api/v7/
+////  =>   convert?q=USD_PHP&compact=ultra&apiKey=9b007913dd6149a2cf4f
+
+const api = axios.create({
+    baseURL: 'https://free.currconv.com/api/v7'
+});
+
+export default api;
+ 
+ 
+
